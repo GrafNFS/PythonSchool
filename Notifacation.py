@@ -31,7 +31,8 @@ def check():
         now = time.time()
         if now >= t:
             play_snd()
-            mb.showinfo("Напоминание", notifText)
+            if mb.showinfo("Напоминание", notifText) != "":
+                stop_music()
             t = None
     window.after(10000, check)
 
